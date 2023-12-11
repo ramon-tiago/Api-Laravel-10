@@ -41,8 +41,11 @@ class RouteServiceProvider extends ServiceProvider
                     ->group(base_path('routes/openeds.php'));
                 Route::namespace('closeds')->group(function () {
                     Route::namespace('backoffice')
-                        ->prefix('backoffice')
-                        ->group(base_path('routes/closeds/backoffice/users.php'));
+                        ->prefix('backoffice')->group(function () {
+                            Route::prefix('users')
+                                ->group(base_path('routes/closeds/backoffice/users.php'));
+                        });
+
                     Route::namespace('erp')
                         ->prefix('erp')
                         ->group(base_path('routes/closeds/erp/peoples.php'));
