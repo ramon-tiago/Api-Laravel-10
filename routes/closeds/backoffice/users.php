@@ -1,8 +1,13 @@
 <?php
 
+// use App\Http\Controllers\Closeds\Backoffice\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::controller(HelloWorldController::class)->group(function () {
-    route::get('/', 'get');
+Route::controller(UserController::class)->group(function () {
+    route::get('/', 'index');
+    route::get('/{id}', 'show');
+    route::post('/', 'store');
+    route::put('/{id}', 'update');
+    route::delete('/{id}', 'destroy');
 });
