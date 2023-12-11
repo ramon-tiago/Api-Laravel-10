@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Closeds\Backoffice;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Services\HelloWorldService;
 
 use Illuminate\Http\JsonResponse;
