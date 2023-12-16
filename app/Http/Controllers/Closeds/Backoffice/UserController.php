@@ -12,7 +12,6 @@ class UserController extends BaseController
     public function __construct(Request $req)
     {
         $this->service = (new UserService())
-            ->setData($req->all())
             ->setModel(User::class);
     }
 }
